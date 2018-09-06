@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.sanjaya.home24"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        androidTest.java.srcDirs += "src/test-common/java"
+        test.java.srcDirs += "src/test-common/java"
+    }
+    lintOptions {
+        lintConfig rootProject.file('lint.xml')
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // android suppport library
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+
+    //Dagger 2
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+
+    // ViewModel and LiveData and Room and Paging (Architecture Components)
+    implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
+    implementation "android.arch.lifecycle:viewmodel:$lifecycleVersion"// use -ktx for Kotlin
+    implementation "android.arch.lifecycle:livedata:$lifecycleVersion"
+    implementation "android.arch.lifecycle:runtime:$lifecycleVersion"
+
+    annotationProcessor "android.arch.lifecycle:compiler:$lifecycleVersion"// use kapt for Kotli
+    implementation "android.arch.lifecycle:common-java8:$lifecycleVersion"
+    implementation "android.arch.lifecycle:reactivestreams:$lifecycleVersion"
+    testImplementation "android.arch.core:core-testing:$lifecycleVersion"
+
+    implementation "android.arch.persistence.room:runtime:$roomVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$roomVersion"// use kapt for Kotlin
+    implementation "android.arch.persistence.room:rxjava2:$roomVersion"
+    implementation "android.arch.persistence.room:guava:$roomVersion"
+    testImplementation "android.arch.persistence.room:testing:$roomVersion"
+
+    implementation "android.arch.paging:runtime:$pagingVersion"
+    testImplementation "android.arch.paging:common:$pagingVersion"
+    implementation "android.arch.paging:rxjava2:1.0.0-rc1"
+
+    // retrofit2 , rxjava
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+
+    // glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+
+    // test
+    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.testRunnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+}
