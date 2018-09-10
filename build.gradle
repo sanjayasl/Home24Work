@@ -40,7 +40,7 @@ ext {
     rxjavaVersion = 'x.y.z'
     timberVersion = '4.7.1'
     glideVersion = '4.8.0'
-    stethoVersion = '1.4.2'
+    stethoVersion = '1.5.0'
 
     //android
     supportLibraryVersion = '27.1.1'

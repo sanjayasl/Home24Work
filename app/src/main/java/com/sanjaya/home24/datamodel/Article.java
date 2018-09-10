@@ -1,16 +1,19 @@
 package com.sanjaya.home24.datamodel;
 
+import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.TypeConverters;
 import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 import com.sanjaya.home24.db.Home24TypeConverters;
+import com.sanjaya.home24.db.MediaTypeConverters;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity(primaryKeys = {"sku"})
-@TypeConverters(Home24TypeConverters.class)
+@TypeConverters(MediaTypeConverters.class)
 public class Article {
 
     @SerializedName("assemblyService")
@@ -27,8 +30,8 @@ public class Article {
     private String energyClass;
     @SerializedName("manufacturePrice")
     private String manufacturePrice;
-//    @SerializedName("media")
-//    private ArrayList<Media> media;
+    @SerializedName("media")
+    private List<Media> media;
 //    @SerializedName("prevPrice")
 //    private Price prevPrice;
 //    @SerializedName("price")
@@ -109,4 +112,13 @@ public class Article {
     public void setAssemblyService(String assemblyService) {
         this.assemblyService = assemblyService;
     }
+
+    public List<Media> getMedia() {
+        return media;
+    }
+
+    public void setMedia(List<Media> media) {
+        this.media = media;
+    }
+
 }

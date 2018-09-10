@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 
+import com.facebook.stetho.Stetho;
 import com.sanjaya.home24.Home24App;
 
 import dagger.android.AndroidInjection;
@@ -16,6 +17,8 @@ import dagger.android.support.HasSupportFragmentInjector;
 public class AppInjector {
     private AppInjector() {}
     public static void init(Home24App home24App) {
+        Stetho.initializeWithDefaults(home24App);
+
         DaggerAppComponent.builder().application(home24App)
                 .build().inject(home24App);
         home24App

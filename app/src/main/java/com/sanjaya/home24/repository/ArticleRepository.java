@@ -76,12 +76,13 @@ public class ArticleRepository {
             @NonNull
             @Override
             protected LiveData<List<Article>> loadFromDb() {
-                // return articleDao.loadArticles();
                 return Transformations.switchMap(articleDao.loadArticles(), articleData -> {
                     if(articleData == null || articleData.size() == 0){
                         return AbsentLiveData.create();
                     } else {
-                        return new MutableLiveData<List<Article>>();
+                        MutableLiveData<List<Article>> data = new MutableLiveData<List<Article>>();
+                        data.setValue(articleData);
+                        return data;
                     }
                 });
             }

@@ -1,0 +1,6 @@
+
+Qsquid:S1068"5Remove this unused "repoListRateLimit" private field.(ññ‹Î8„‹ıÛ,
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¦Ğš 8„‹ıÛ,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(–Á½çùÿÿÿÿ8„‹ıÛ,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(†´öƒùÿÿÿÿ8„‹ıÛ,
+Zsquid:S1155">Use isEmpty() to check whether the collection is empty or not.(õ‘ë˜8„‹ıÛ,
