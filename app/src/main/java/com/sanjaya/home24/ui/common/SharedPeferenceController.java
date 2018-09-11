@@ -5,10 +5,13 @@ import android.content.SharedPreferences;
 
 import com.sanjaya.home24.MainActivity;
 
+import javax.inject.Inject;
+
 public class SharedPeferenceController {
     private static final String HOME24_PREFS = "home24_preference";
     private final SharedPreferences prefs;
 
+    @Inject
     public SharedPeferenceController(MainActivity mainActivity) {
         this.prefs = mainActivity.getSharedPreferences(HOME24_PREFS, Context.MODE_PRIVATE);
     }
@@ -41,6 +44,12 @@ public class SharedPeferenceController {
 
     public boolean getBooleanValue(String key){
         return prefs.getBoolean(key, false);
+    }
+
+    public void removeValue(String key){
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.remove(key);
+        editor.commit();
     }
 
 }

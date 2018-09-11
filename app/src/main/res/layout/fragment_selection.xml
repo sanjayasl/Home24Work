@@ -95,7 +95,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="<- Back"/>
+            android:text="Back"/>
 
         <TextView
             android:id="@+id/button_next"
@@ -109,7 +109,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="Next ->"/>
+            android:text="Next"/>
 
     </RelativeLayout>
 
