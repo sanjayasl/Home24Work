@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- pressed -->
-    <item android:drawable="@drawable/thumb_up_select" android:state_enabled="true" android:state_pressed="true"/>
+    <item android:drawable="@drawable/thumb_up_select" android:state_enabled="true" android:state_checked="true"/>
     <!-- disable -->
     <item android:drawable="@drawable/thumb_up_disable" android:state_enabled="false"/>
     <!-- default -->

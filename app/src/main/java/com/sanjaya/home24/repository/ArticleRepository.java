@@ -3,6 +3,7 @@ package com.sanjaya.home24.repository;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Transformations;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
@@ -94,4 +95,41 @@ public class ArticleRepository {
             }
         }.asLiveData();
     }
+
+    public void updateLike(String sku, boolean isLike){
+        AsyncTask<String, Void, Void> asyncTask = new AsyncTask<String, Void, Void>() {
+            @Override
+            protected Void doInBackground(String... items) {
+                db.beginTransaction();
+                try {
+                    articleDao.updateLike(items[0],
+                            items[1].equalsIgnoreCase("true") ? true : false);
+                    db.setTransactionSuccessful();
+                }finally {
+                    db.endTransaction();
+                }
+                return null;
+            }
+        };
+        asyncTask.execute(sku, isLike ? "true" : "false");
+    }
+
+    public void updateDislike(String sku, boolean isDislike) {
+        AsyncTask<String, Void, Void> asyncTask = new AsyncTask<String, Void, Void>() {
+            @Override
+            protected Void doInBackground(String... items) {
+                db.beginTransaction();
+                try {
+                    articleDao.updateDisLike(items[0],
+                            items[1].equalsIgnoreCase("true") ? true : false);
+                    db.setTransactionSuccessful();
+                } finally {
+                    db.endTransaction();
+                }
+                return null;
+            }
+        };
+        asyncTask.execute(sku, isDislike ? "true" : "false");
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.sanjaya.home24.datamodel;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.TypeConverters;
@@ -47,6 +48,10 @@ public class Article {
 //    private Links links;
 //    @SerializedName("_metadata")
 //    private Metadata metadata;
+    @ColumnInfo(name = "like")
+    private boolean like;
+    @ColumnInfo(name = "dislike")
+    private boolean dislike;
 
     public String getDescription() {
         return description;
@@ -119,6 +124,22 @@ public class Article {
 
     public void setMedia(List<Media> media) {
         this.media = media;
+    }
+
+    public boolean isLike() {
+        return like;
+    }
+
+    public void setLike(boolean like) {
+        this.like = like;
+    }
+
+    public boolean isDislike() {
+        return dislike;
+    }
+
+    public void setDislike(boolean dislike) {
+        this.dislike = dislike;
     }
 
 }

@@ -16,7 +16,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -42,6 +48,9 @@ import javax.inject.Inject;
 public class SelectionFragment extends Fragment implements Injectable {
 
     private final static String PREF_ARTICAL_COUNT = "artical_count";
+    private final static String PREF_ARTICAL_RATED = "all_article_rated";
+    private final static String COMPLETED_IMG =
+            "https://cdn.pixabay.com/photo/2016/10/10/01/49/hook-1727484_640.png";
 
     @Inject
     ViewModelProvider.Factory viewModelFactory;
@@ -60,6 +69,13 @@ public class SelectionFragment extends Fragment implements Injectable {
 
     ImageView imageView;
     TextView textView;
+    TextView rateCount;
+    TextView buttonNext;
+    RadioButton likeButton;
+    RadioButton dislikeButton;
+    ImageButton reviewButton;
+    RelativeLayout buttonPanel;
+    ProgressBar progressBar;
 
     public SelectionFragment() { }
 
@@ -67,12 +83,6 @@ public class SelectionFragment extends Fragment implements Injectable {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_selection, container, false);
-//        SelectionFragmentBinding dataBinding = DataBindingUtil
-//                .inflate(inflater, R.layout.fragment_selection, container, false,
-//                        dataBindingComponent);
-//        binding = new AutoClearedValue<>(this, dataBinding);
-//        return dataBinding.getRoot();
         View rootView = inflater.inflate(R.layout.fragment_selection, container, false);
         initView(rootView);
         return rootView;
@@ -81,19 +91,24 @@ public class SelectionFragment extends Fragment implements Injectable {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        progressBar.setVisibility(View.VISIBLE);
+        buttonPanel.setVisibility(View.INVISIBLE);
         articleViewModel = ViewModelProviders.of(this, viewModelFactory).get(ArticleViewModel.class);
-        //LiveData<Resource<List<Article>>> articles = articleViewModel.getArticles();
         articleViewModel.getArticles().observe(this, resource -> {
             if(resource != null && resource.data != null){
-                //for(Article article : resource.data){
-                //    Log.e("ATG", "Article title : " + article.getTitle());
-                //    Log.e("ATG", "");
-                //}
+
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        loadArticle(resource.data.get(
-                                sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT)));
+                        progressBar.setVisibility(View.INVISIBLE);
+                        if(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) < 10) {
+                            setRatedCount(resource.data);
+                            loadArticle(resource.data.get(
+                                    sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT)));
+                        } else {
+                            // TODO
+                            loadCompleted(COMPLETED_IMG, "Completed");
+                        }
                     }
                 });
             }
@@ -102,20 +117,58 @@ public class SelectionFragment extends Fragment implements Injectable {
     }
 
     private void initView(View view){
-        textView = view.findViewById(R.id.textView);
+        textView = view.findViewById(R.id.title);
+        rateCount = view.findViewById(R.id.rate_count);
         imageView = view.findViewById(R.id.item_image);
+        likeButton = view.findViewById(R.id.button_like);
+        dislikeButton = view.findViewById(R.id.button_dislike);
+        reviewButton = view.findViewById(R.id.button_review);
+        buttonPanel = view.findViewById(R.id.button_panel);
+        progressBar = view.findViewById(R.id.progressBar);
 
+        buttonNext = view.findViewById(R.id.button_next);
         view.findViewById(R.id.button_back).setEnabled(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) > 0);
-        view.findViewById(R.id.button_next).setEnabled(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) < 9);
         view.findViewById(R.id.button_back).setOnClickListener(clickListener);
         view.findViewById(R.id.button_next).setOnClickListener(clickListener);
+        ((RadioGroup) view.findViewById(R.id.button_group)).setOnCheckedChangeListener(selectListener);
     }
 
     private void loadArticle(Article article){
         textView.setText(article.getTitle());
+        likeButton.setChecked(article.isLike());
+        dislikeButton.setChecked(article.isDislike());
+        buttonPanel.setVisibility(View.VISIBLE);
+        buttonNext.setVisibility(View.VISIBLE);
 
         Glide.with(getActivity())
                 .load(article.getMedia().get(0).getUri())
+                .into(imageView);
+    }
+
+    private void setRatedCount(List<Article> articles){
+        int count = 0;
+        for(Article article : articles){
+            if(article.isLike() || article.isDislike())
+                count += 1;
+        }
+
+        rateCount.setText(String.valueOf(count) + "/10");
+        buttonNext.setEnabled(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) < count
+                || sharedPeferenceController.getBooleanValue(PREF_ARTICAL_RATED));
+        reviewButton.setEnabled(false);
+        if(count == 10){
+            reviewButton.setEnabled(true);
+            sharedPeferenceController.saveBooleanValue(PREF_ARTICAL_RATED, true);
+        }
+    }
+
+    private void loadCompleted(String img, String title){
+        textView.setText(title);
+        buttonPanel.setVisibility(View.INVISIBLE);
+        buttonNext.setVisibility(View.INVISIBLE);
+
+        Glide.with(getActivity())
+                .load(img)
                 .into(imageView);
     }
 
@@ -142,9 +195,33 @@ public class SelectionFragment extends Fragment implements Injectable {
 
     private void goToNext(){
         Log.e("TAG", "next button pressed!");
-        int currrentVal = sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT);
+        if(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) < 10)
+            moveToNext(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT));
+    }
+
+    private void moveToNext(int currrentVal){
         sharedPeferenceController.saveIntegerValue(PREF_ARTICAL_COUNT, currrentVal += 1);
         navigationController.navigationToSelection();
     }
+
+    private RadioGroup.OnCheckedChangeListener selectListener = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            switch (checkedId){
+                case R.id.button_like:
+                    articleViewModel.updateArticleWithLike(
+                            sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT), likeButton.isChecked());
+                    if(!sharedPeferenceController.getBooleanValue(PREF_ARTICAL_RATED))
+                        moveToNext(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT));
+                    break;
+                case R.id.button_dislike:
+                    articleViewModel.updateArticleWithDislike(
+                            sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT), dislikeButton.isChecked());
+                    if(!sharedPeferenceController.getBooleanValue(PREF_ARTICAL_RATED))
+                        moveToNext(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT));
+                    break;
+            }
+        }
+    };
 
 }
