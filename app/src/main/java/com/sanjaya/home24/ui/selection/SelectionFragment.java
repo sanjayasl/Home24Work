@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.sanjaya.home24.MainActivity;
 import com.sanjaya.home24.R;
 //import com.sanjaya.home24.binding.FragmentDataBindingComponent;
 //import com.sanjaya.home24.databinding.SelectionFragmentBinding;
@@ -28,6 +29,7 @@ import com.sanjaya.home24.datamodel.Article;
 import com.sanjaya.home24.datamodel.Resource;
 import com.sanjaya.home24.di.Injectable;
 import com.sanjaya.home24.ui.common.NavigationController;
+import com.sanjaya.home24.ui.common.SharedPeferenceController;
 import com.sanjaya.home24.util.AutoClearedValue;
 
 import java.util.List;
@@ -39,6 +41,8 @@ import javax.inject.Inject;
  */
 public class SelectionFragment extends Fragment implements Injectable {
 
+    private final static String PREF_ARTICAL_COUNT = "artical_count";
+
     @Inject
     ViewModelProvider.Factory viewModelFactory;
 
@@ -46,6 +50,9 @@ public class SelectionFragment extends Fragment implements Injectable {
 
     @Inject
     NavigationController navigationController;
+
+    @Inject
+    SharedPeferenceController sharedPeferenceController;
 
 //    DataBindingComponent dataBindingComponent = new FragmentDataBindingComponent(this);
 //    @VisibleForTesting
@@ -78,14 +85,15 @@ public class SelectionFragment extends Fragment implements Injectable {
         //LiveData<Resource<List<Article>>> articles = articleViewModel.getArticles();
         articleViewModel.getArticles().observe(this, resource -> {
             if(resource != null && resource.data != null){
-                for(Article article : resource.data){
-                    Log.e("ATG", "Article title : " + article.getTitle());
-                    Log.e("ATG", "");
-                }
+                //for(Article article : resource.data){
+                //    Log.e("ATG", "Article title : " + article.getTitle());
+                //    Log.e("ATG", "");
+                //}
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        loadArticle(resource.data.get(0));
+                        loadArticle(resource.data.get(
+                                sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT)));
                     }
                 });
             }
@@ -97,6 +105,8 @@ public class SelectionFragment extends Fragment implements Injectable {
         textView = view.findViewById(R.id.textView);
         imageView = view.findViewById(R.id.item_image);
 
+        view.findViewById(R.id.button_back).setEnabled(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) > 0);
+        view.findViewById(R.id.button_next).setEnabled(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) < 9);
         view.findViewById(R.id.button_back).setOnClickListener(clickListener);
         view.findViewById(R.id.button_next).setOnClickListener(clickListener);
     }
@@ -114,11 +124,27 @@ public class SelectionFragment extends Fragment implements Injectable {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.button_back:
+                    goToBack();
                     break;
                 case R.id.button_next:
+                    goToNext();
                     break;
             }
         }
     };
+
+    private void goToBack(){
+        Log.e("TAG", "back button pressed!");
+        int currrentVal = sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT);
+        sharedPeferenceController.saveIntegerValue(PREF_ARTICAL_COUNT, currrentVal -= 1);
+        navigationController.navigationToSelection();
+    }
+
+    private void goToNext(){
+        Log.e("TAG", "next button pressed!");
+        int currrentVal = sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT);
+        sharedPeferenceController.saveIntegerValue(PREF_ARTICAL_COUNT, currrentVal += 1);
+        navigationController.navigationToSelection();
+    }
 
 }

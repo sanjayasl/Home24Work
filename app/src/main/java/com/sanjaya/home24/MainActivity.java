@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.sanjaya.home24.ui.common.NavigationController;
+import com.sanjaya.home24.ui.common.SharedPeferenceController;
 
 import javax.inject.Inject;
 
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
     @Inject
     NavigationController navigationController;
+    @Inject
+    SharedPeferenceController sharedPeferenceController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
