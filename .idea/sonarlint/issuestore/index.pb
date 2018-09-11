@@ -51,3 +51,21 @@ x
 Happ/src/main/java/com/sanjaya/home24/ui/selection/SelectionFragment.java,1\4\1464abbe37f995043b7cbd163eb4da5b8f29a380
 k
 ;app/src/main/java/com/sanjaya/home24/datamodel/Article.java,d\7\d71fcd3750cd378c5b4c7310be1f4db55f5a751a
+c
+3app/src/main/java/com/sanjaya/home24/Home24App.java,e\e\ee4fc5b9c0e6467929adb3a0f01cfb5a4e0f0525
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+q
+Aapp/src/main/java/com/sanjaya/home24/db/Home24TypeConverters.java,5\a\5a9ac4296cbbffac20754790ae4327cc9f1b40b2
+p
+@app/src/main/java/com/sanjaya/home24/db/MediaTypeConverters.java,e\9\e91115a112f7c24526a5a56c70556db822c8e807
+o
+?app/src/main/java/com/sanjaya/home24/util/AutoClearedValue.java,2\8\28f9177c52bf3e2545291e85aa870c96fd928a95
+i
+9app/src/main/java/com/sanjaya/home24/datamodel/Media.java,1\2\123b1ee12b2dd9c18f9646dabbf4891283a4827e
+^
+.app/src/main/res/layout/fragment_selection.xml,6\6\66327093e7b0939434ddb4ff8373b7c032899035
+x
+Happ/src/main/java/com/sanjaya/home24/ui/common/NavigationController.java,f\1\f11b9a3d30cb50082e526b30aaba7434c868ed32
+}
+Mapp/src/main/java/com/sanjaya/home24/ui/common/SharedPeferenceController.java,c\2\c21b5e0e7c1a191bd79673bb43189f7325eb62eb

@@ -1,8 +1,10 @@
 
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(×–™øÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ò“óäøÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¹ÑÆ–
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(”­ë«
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(èêÖÊùÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ëÐÓÊ
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(­ÍäÑúÿÿÿÿ8É­ÒýÛ,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¹ÑÆ–8Ìý£—Ü,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ò“óäøÿÿÿÿ8Ìý£—Ü,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(­ÍäÑúÿÿÿÿ8Ìý£—Ü,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ëÐÓÊ8Ìý£—Ü,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(×–™øÿÿÿÿ8Ìý£—Ü,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(”­ë«8Ìý£—Ü,
+usquid:UselessImportCheck"GRemove this unused import 'com.sanjaya.home24.db.Home24TypeConverters'.(°Œ¦÷ûÿÿÿÿ8Ìý£—Ü,
+lsquid:UselessImportCheck"CRemove this unused import 'android.arch.persistence.room.Embedded'.(‡—Š§8Ìý£—Ü,
+Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ìý£—Ü,
