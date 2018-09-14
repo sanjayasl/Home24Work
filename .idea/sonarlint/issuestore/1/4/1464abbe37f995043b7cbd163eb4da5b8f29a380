@@ -1,14 +1,21 @@
 
-Esquid:S1604U"(Make this anonymous inner class a lambda(ª¨„S8à∞…ô‹,
-gsquid:S1871v"IThis case's code block is the same as the block for the case on line 116.(√è‚æ8µú”ô‹,
-üsquid:S11869"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˙—ë◊8à∞…ô‹,
-isquid:CommentedOutCodeLine?"<This block of commented-out lines of code should be removed.(∑üÒ˚8à∞…ô‹,
-isquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(«≥ËÇ8à∞…ô‹,
-nsquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(∑◊≤Ò˘ˇˇˇˇ8à∞…ô‹,
-\"squid:SwitchLastCaseIsDefaultChecks""Add a default case to this switch.(◊ìæÒ˘ˇˇˇˇ8µú”ô‹,
-nsquid:S1301s"KReplace this "switch" statement by "if" statements to increase readability.(◊ìæÒ˘ˇˇˇˇ8µú”ô‹,
-nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ïˇé‰˙ˇˇˇˇ8à∞…ô‹,
-}squid:S1450-"_Remove the "articleViewModel" field and declare it as a local variable in the relevant methods.(ÿ„÷Ô8à∞…ô‹,
-nsquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(ÂŒ’ú˚ˇˇˇˇ8à∞…ô‹,
-isquid:CommentedOutCodeLineN"<This block of commented-out lines of code should be removed.(™ø˚£8à∞…ô‹,
-nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˇ’ÖÒ˝ˇˇˇˇ8à∞…ô‹,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ïˇé‰˙ˇˇˇˇ8ÆÖèΩ›,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(∑◊≤Ò˘ˇˇˇˇ8ÆÖèΩ›,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(«≥ËÇ8ÆÖèΩ›,
+esquid:UselessImportCheck"<Remove this unused import 'android.arch.lifecycle.LiveData'.(⁄Úõé8ÆÖèΩ›,
+Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(◊ìæÒ˘ˇˇˇˇ8ÆÖèΩ›,
+Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(ˇ´¨ã¸ˇˇˇˇ8ÆÖèΩ›,
+Csquid:S1604"(Make this anonymous inner class a lambda(ª¨„S8ÆÖèΩ›,
+esquid:UselessImportCheck"<Remove this unused import 'com.sanjaya.home24.MainActivity'.(õõÛÎ8ÆÖèΩ›,
+isquid:UselessImportCheck"ARemove this unused import 'com.sanjaya.home24.constant.AppValue'.(πóÜT8ÆÖèΩ›,
+`squid:S3398"?Move this method into the anonymous class declared at line 175.(ö–Á√˚ˇˇˇˇ8ÆÖèΩ›,
+`squid:UselessImportCheck"2Remove this unused import 'android.widget.Button'.(≤çÚû˝ˇˇˇˇ8ÆÖèΩ›,
+Nsquid:S1135"2Complete the task associated to this TODO comment.(ÖÔúÜ8ÆÖèΩ›,
+Fsquid:S1659"+Declare "dislikeButton" on a separate line.(˜ì¡`8ÆÖèΩ›,
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ˇ´¨ã¸ˇˇˇˇ8ÆÖèΩ›,
+ksquid:UselessImportCheck"BRemove this unused import 'com.sanjaya.home24.datamodel.Resource'.(°‡ûß8ÆÖèΩ›,
+[squid:S3398"?Move this method into the anonymous class declared at line 175.(¯É∂œ8ÆÖèΩ›,
+Csquid:S1659"(Declare "buttonNext" on a separate line.(Ò˛ˇK8ÆÖèΩ›,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˇ’ÖÒ˝ˇˇˇˇ8ÆÖèΩ›,
+Bsquid:S1659"'Declare "rateCount" on a separate line.(Ò˛ˇK8ÆÖèΩ›,
+ùsquid:S1186"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˙—ë◊8ÆÖèΩ›,

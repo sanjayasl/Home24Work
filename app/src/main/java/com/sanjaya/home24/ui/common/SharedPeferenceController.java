@@ -7,8 +7,9 @@ import com.sanjaya.home24.MainActivity;
 
 import javax.inject.Inject;
 
+import static com.sanjaya.home24.constant.AppValue.HOME24_PREFS;
+
 public class SharedPeferenceController {
-    private static final String HOME24_PREFS = "home24_preference";
     private final SharedPreferences prefs;
 
     @Inject

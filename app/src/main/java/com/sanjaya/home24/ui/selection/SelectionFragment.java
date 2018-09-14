@@ -31,6 +31,7 @@ import com.sanjaya.home24.R;
 //import com.sanjaya.home24.binding.FragmentDataBindingComponent;
 //import com.sanjaya.home24.databinding.SelectionFragmentBinding;
 import com.sanjaya.home24.binding.FragmentDataBindingComponent;
+import com.sanjaya.home24.constant.AppValue;
 import com.sanjaya.home24.datamodel.Article;
 import com.sanjaya.home24.datamodel.Resource;
 import com.sanjaya.home24.di.Injectable;
@@ -42,15 +43,14 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import static com.sanjaya.home24.constant.AppValue.COMPLETED_IMG;
+import static com.sanjaya.home24.constant.AppValue.PREF_ARTICAL_COUNT;
+import static com.sanjaya.home24.constant.AppValue.PREF_ARTICAL_RATED;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class SelectionFragment extends Fragment implements Injectable {
-
-    private final static String PREF_ARTICAL_COUNT = "artical_count";
-    private final static String PREF_ARTICAL_RATED = "all_article_rated";
-    private final static String COMPLETED_IMG =
-            "https://cdn.pixabay.com/photo/2016/10/10/01/49/hook-1727484_640.png";
 
     @Inject
     ViewModelProvider.Factory viewModelFactory;
@@ -68,14 +68,12 @@ public class SelectionFragment extends Fragment implements Injectable {
 //    AutoClearedValue<SelectionFragmentBinding> binding;
 
     ImageView imageView;
-    TextView textView;
-    TextView rateCount;
-    TextView buttonNext;
-    RadioButton likeButton;
-    RadioButton dislikeButton;
+    TextView textView, rateCount, buttonNext;
+    RadioButton likeButton, dislikeButton;
     ImageButton reviewButton;
     RelativeLayout buttonPanel;
     ProgressBar progressBar;
+    RadioGroup radioGroup;
 
     public SelectionFragment() { }
 
@@ -125,12 +123,13 @@ public class SelectionFragment extends Fragment implements Injectable {
         reviewButton = view.findViewById(R.id.button_review);
         buttonPanel = view.findViewById(R.id.button_panel);
         progressBar = view.findViewById(R.id.progressBar);
-
+        radioGroup = view.findViewById(R.id.button_group);
         buttonNext = view.findViewById(R.id.button_next);
+
         view.findViewById(R.id.button_back).setEnabled(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) > 0);
         view.findViewById(R.id.button_back).setOnClickListener(clickListener);
         view.findViewById(R.id.button_next).setOnClickListener(clickListener);
-        ((RadioGroup) view.findViewById(R.id.button_group)).setOnCheckedChangeListener(selectListener);
+        view.findViewById(R.id.button_review).setOnClickListener(clickListener);
     }
 
     private void loadArticle(Article article){
@@ -139,6 +138,7 @@ public class SelectionFragment extends Fragment implements Injectable {
         dislikeButton.setChecked(article.isDislike());
         buttonPanel.setVisibility(View.VISIBLE);
         buttonNext.setVisibility(View.VISIBLE);
+        radioGroup.setOnCheckedChangeListener(selectListener);
 
         Glide.with(getActivity())
                 .load(article.getMedia().get(0).getUri())
@@ -182,6 +182,9 @@ public class SelectionFragment extends Fragment implements Injectable {
                 case R.id.button_next:
                     goToNext();
                     break;
+                case R.id.button_review:
+                    navigationController.navigationToReview();
+                    break;
             }
         }
     };
@@ -189,7 +192,7 @@ public class SelectionFragment extends Fragment implements Injectable {
     private void goToBack(){
         Log.e("TAG", "back button pressed!");
         int currrentVal = sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT);
-        sharedPeferenceController.saveIntegerValue(PREF_ARTICAL_COUNT, currrentVal -= 1);
+        sharedPeferenceController.saveIntegerValue(PREF_ARTICAL_COUNT, currrentVal - 1);
         navigationController.navigationToSelection();
     }
 
@@ -200,7 +203,7 @@ public class SelectionFragment extends Fragment implements Injectable {
     }
 
     private void moveToNext(int currrentVal){
-        sharedPeferenceController.saveIntegerValue(PREF_ARTICAL_COUNT, currrentVal += 1);
+        sharedPeferenceController.saveIntegerValue(PREF_ARTICAL_COUNT, currrentVal + 1);
         navigationController.navigationToSelection();
     }
 
