@@ -126,6 +126,7 @@ public class SelectionFragment extends Fragment implements Injectable {
         radioGroup = view.findViewById(R.id.button_group);
         buttonNext = view.findViewById(R.id.button_next);
 
+        navigationController.enableUpNavigation(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) > 0);
         view.findViewById(R.id.button_back).setEnabled(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) > 0);
         view.findViewById(R.id.button_back).setOnClickListener(clickListener);
         view.findViewById(R.id.button_next).setOnClickListener(clickListener);

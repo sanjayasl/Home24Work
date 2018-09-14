@@ -11,16 +11,25 @@ import android.view.ViewGroup;
 
 import com.sanjaya.home24.R;
 import com.sanjaya.home24.adapter.SectionsPagerAdapter;
+import com.sanjaya.home24.di.Injectable;
+import com.sanjaya.home24.ui.common.SharedPeferenceController;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReviewFragment extends Fragment {
+import javax.inject.Inject;
+
+import static com.sanjaya.home24.constant.AppValue.CURRENT_REVIEW;
+
+public class ReviewFragment extends Fragment implements Injectable {
+
+    @Inject
+    SharedPeferenceController sharedPeferenceController;
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
-    private TabLayout.OnTabSelectedListener mListener;
+    // private TabLayout.OnTabSelectedListener mListener;
 
     public ReviewFragment() {
         // Required empty public constructor
@@ -34,6 +43,7 @@ public class ReviewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        sharedPeferenceController.saveBooleanValue(CURRENT_REVIEW, true);
         /**
          * inflate fragment_tab_layout and setup view
          */

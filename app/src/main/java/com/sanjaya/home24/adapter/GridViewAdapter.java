@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.sanjaya.home24.R;
 import com.sanjaya.home24.datamodel.Article;
 
@@ -42,6 +43,7 @@ public class GridViewAdapter extends RecyclerView.Adapter<GridViewAdapter.GridVi
         final Article article = this.articleList.get(position);
 
         Glide.with(context)
+                .applyDefaultRequestOptions(new RequestOptions().centerInside())
                 .load(article.getMedia().get(0).getUri())
                 .into(holder.ivItemImg);
     }

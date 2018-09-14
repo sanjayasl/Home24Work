@@ -34,10 +34,15 @@ public class NavigationController {
     }
 
     public void navigationToReview(){
+        enableUpNavigation(true);
         ReviewFragment reviewFragment = new ReviewFragment();
         fragmentManager.beginTransaction()
                 .replace(containerId, reviewFragment)
                 .commitAllowingStateLoss();
+    }
+
+    public void enableUpNavigation(boolean canBack){
+        actionbar.setDisplayHomeAsUpEnabled(canBack);
     }
 
     public void shouldDisplayHomeUp(){

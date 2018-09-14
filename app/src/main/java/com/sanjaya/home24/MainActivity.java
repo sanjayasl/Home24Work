@@ -15,6 +15,8 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
+import static com.sanjaya.home24.constant.AppValue.CURRENT_REVIEW;
+
 public class MainActivity extends AppCompatActivity implements HasSupportFragmentInjector, FragmentManager.OnBackStackChangedListener{
     @Inject
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
@@ -46,9 +48,14 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
 
     @Override
     public boolean onSupportNavigateUp() {
-//        int currrentVal = sharedPeferenceController.getIntegerValue(AppValue.PREF_ARTICAL_COUNT);
-//        sharedPeferenceController.saveIntegerValue(AppValue.PREF_ARTICAL_COUNT, currrentVal - 1);
+        if(!sharedPeferenceController.getBooleanValue(CURRENT_REVIEW)) {
+            int currrentVal = sharedPeferenceController.getIntegerValue(AppValue.PREF_ARTICAL_COUNT);
+            sharedPeferenceController.saveIntegerValue(AppValue.PREF_ARTICAL_COUNT, currrentVal - 1);
+        } else {
+            sharedPeferenceController.saveBooleanValue(CURRENT_REVIEW, false);
+        }
 //        navigationController.popBackStack();
+        navigationController.navigationToSelection();
         return true;
     }
 

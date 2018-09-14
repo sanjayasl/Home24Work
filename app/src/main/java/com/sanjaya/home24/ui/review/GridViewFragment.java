@@ -47,13 +47,14 @@ public class GridViewFragment extends Fragment implements Injectable {
     }
 
     private void initView(View view){
-        recyclerView = view.findViewById(R.id.list_view_mode);
+        recyclerView = view.findViewById(R.id.grid_view_mode);
         recyclerView.setHasFixedSize(true);
 
-        mLayoutManager = new GridLayoutManager(getContext(), 4);
+        mLayoutManager = new GridLayoutManager(getContext(), 3);
         recyclerView.setLayoutManager(mLayoutManager);
 
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+        // recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+        // recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.HORIZONTAL));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         gridViewAdapter = new GridViewAdapter(getContext());
