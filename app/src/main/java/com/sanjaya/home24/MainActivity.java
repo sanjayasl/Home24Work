@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
 
     @Override
     public void onBackPressed() {
-        if(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) > 0){
+        if(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT) > 0 ||
+                sharedPeferenceController.getBooleanValue(CURRENT_REVIEW)){
             onSupportNavigateUp();
         } else {
             super.onBackPressed();
