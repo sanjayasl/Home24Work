@@ -1,7 +1,7 @@
 
-Zsquid:S1155">Use isEmpty() to check whether the collection is empty or not.(υ‘λ8ούΊά,
 Dsquid:S1125"(Remove the literal "true" boolean value.(¶αή8ούΊά,
-zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(θ”α¬όÿÿÿÿ8ούΊά,
-Qsquid:S1068"5Remove this unused "repoListRateLimit" private field.(ρρ‹Ξ8ούΊά,
 lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(–Α½ηωÿÿÿÿ8ούΊά,
+Qsquid:S1068"5Remove this unused "repoListRateLimit" private field.(ρρ‹Ξ8ούΊά,
 Dsquid:S1125"(Remove the literal "true" boolean value.(¶αή8ούΊά,
+Zsquid:S1155">Use isEmpty() to check whether the collection is empty or not.(υ‘λ8ούΊά,
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(θ”α¬όÿÿÿÿ8ούΊά,

@@ -28,6 +28,7 @@ public class NavigationController {
     public void navigationToSelection(){
         SelectionFragment selectionFragment = new SelectionFragment();
         fragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.fade_in_enter, R.anim.fade_out_exit)
                 .replace(containerId, selectionFragment)
                 // .addToBackStack(null)
                 .commitAllowingStateLoss();

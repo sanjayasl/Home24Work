@@ -1,6 +1,7 @@
 
-Jsquid:S1659")Declare "ivOutputImg" on a separate line.(ªÂ«³ûÿÿÿÿ8ˆ¶½İ,
-"squid:ClassVariableVisibilityCheck"UMake ivItemImg a static final constant or non-public and provide accessors if needed.(ªÂ«³ûÿÿÿÿ8ˆ¶½İ,
-"squid:ClassVariableVisibilityCheck"WMake ivOutputImg a static final constant or non-public and provide accessors if needed.(ªÂ«³ûÿÿÿÿ8ˆ¶½İ,
-"squid:ClassVariableVisibilityCheck"WMake tvItemTitle a static final constant or non-public and provide accessors if needed.(ÿŒáøÿÿÿÿ8ˆ¶½İ,
-nsquid:UselessImportCheck"ERemove this unused import 'android.support.v4.content.ContextCompat'.(¹†Ç8ˆ¶½İ,
+Jsquid:S1659")Declare "ivOutputImg" on a separate line.(ªÂ«³ûÿÿÿÿ8³”ŠÄİ,
+"squid:ClassVariableVisibilityCheck"UMake ivItemImg a static final constant or non-public and provide accessors if needed.(ªÂ«³ûÿÿÿÿ8³”ŠÄİ,
+"squid:ClassVariableVisibilityCheck"WMake ivOutputImg a static final constant or non-public and provide accessors if needed.(ªÂ«³ûÿÿÿÿ8³”ŠÄİ,
+"squid:ClassVariableVisibilityCheck"WMake tvItemTitle a static final constant or non-public and provide accessors if needed.(ÿŒáøÿÿÿÿ8³”ŠÄİ,
+jsquid:UselessImportCheck"<Remove this unused import 'android.support.v4.app.Fragment'.(îñ«úÿÿÿÿ8³”ŠÄİ,
+nsquid:UselessImportCheck"ERemove this unused import 'android.support.v4.content.ContextCompat'.(¹†Ç8³”ŠÄİ,

@@ -1,2 +1,6 @@
 
-Dsquid:S1185"(Remove this method to simply inherit it.(ßìê¯8Êûú¸İ,
+{squid:S1450"_Remove the "articleViewModel" field and declare it as a local variable in the relevant methods.(ØãÖï8Š—–Éİ,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¾ÚÅøÿÿÿÿ8Š—–Éİ,
+Csquid:S1604"(Make this anonymous inner class a lambda(»¬ãS8Š—–Éİ,
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸²™ğûÿÿÿÿ8Š—–Éİ,
+usquid:UselessImportCheck"GRemove this unused import 'com.sanjaya.home24.adapter.ListViewAdapter'.(ƒ§¡«ùÿÿÿÿ8Š—–Éİ,

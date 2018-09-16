@@ -1,2 +1,7 @@
 
-{squid:S1450"_Remove the "articleViewModel" field and declare it as a local variable in the relevant methods.(ÿ„÷Ô8Íƒ‹Ω›,
+{squid:S1450"_Remove the "articleViewModel" field and declare it as a local variable in the relevant methods.(ÿ„÷Ô8ª•≥À›,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Åæ⁄≈¯ˇˇˇˇ8ª•≥À›,
+Csquid:S1604"(Make this anonymous inner class a lambda(ª¨„S8ª•≥À›,
+ùsquid:S1186"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(©∑ãÊ8ª•≥À›,
+Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(˜âÓÉ8ª•≥À›,
+osquid:UselessImportCheck"ARemove this unused import 'com.sanjaya.home24.datamodel.Article'.(å’‰Â˝ˇˇˇˇ8ª•≥À›,

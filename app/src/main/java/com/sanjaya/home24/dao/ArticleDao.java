@@ -25,10 +25,10 @@ public abstract class ArticleDao {
     @Query("SELECT * FROM Article")
     public abstract LiveData<List<Article>> loadArticles();
 
-    @Query("UPDATE Article SET like = :isLike WHERE sku = :sku")
-    public abstract void updateLike(String sku, boolean isLike);
+    @Query("UPDATE Article SET like = :isLike, dislike = :dislike WHERE sku = :sku")
+    public abstract void updateLike(String sku, boolean isLike, boolean dislike);
 
-    @Query("UPDATE Article SET dislike = :isDisLike WHERE sku = :sku")
-    public abstract void updateDisLike(String sku, boolean isDisLike);
+    @Query("UPDATE Article SET dislike = :isDisLike, like = :like WHERE sku = :sku")
+    public abstract void updateDisLike(String sku, boolean isDisLike, boolean like);
 
 }

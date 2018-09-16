@@ -1,21 +1,21 @@
 
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ìÿŽäúÿÿÿÿ8®…½Ý,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(·×²ñùÿÿÿÿ8®…½Ý,
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ç³è‚8®…½Ý,
-esquid:UselessImportCheck"<Remove this unused import 'android.arch.lifecycle.LiveData'.(Úò›Ž8®…½Ý,
-Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ8®…½Ý,
-Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(ÿ«¬‹üÿÿÿÿ8®…½Ý,
-Csquid:S1604"(Make this anonymous inner class a lambda(»¬ãS8®…½Ý,
-esquid:UselessImportCheck"<Remove this unused import 'com.sanjaya.home24.MainActivity'.(››óë8®…½Ý,
-isquid:UselessImportCheck"ARemove this unused import 'com.sanjaya.home24.constant.AppValue'.(¹—†T8®…½Ý,
-`squid:S3398"?Move this method into the anonymous class declared at line 175.(šÐçÃûÿÿÿÿ8®…½Ý,
-`squid:UselessImportCheck"2Remove this unused import 'android.widget.Button'.(²òžýÿÿÿÿ8®…½Ý,
-Nsquid:S1135"2Complete the task associated to this TODO comment.(…ïœ†8®…½Ý,
-Fsquid:S1659"+Declare "dislikeButton" on a separate line.(÷“Á`8®…½Ý,
-lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ÿ«¬‹üÿÿÿÿ8®…½Ý,
-ksquid:UselessImportCheck"BRemove this unused import 'com.sanjaya.home24.datamodel.Resource'.(¡àž§8®…½Ý,
-[squid:S3398"?Move this method into the anonymous class declared at line 175.(øƒ¶Ï8®…½Ý,
-Csquid:S1659"(Declare "buttonNext" on a separate line.(ñþÿK8®…½Ý,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÿÕ…ñýÿÿÿÿ8®…½Ý,
-Bsquid:S1659"'Declare "rateCount" on a separate line.(ñþÿK8®…½Ý,
-squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ‘×8®…½Ý,
+`squid:S3398"?Move this method into the anonymous class declared at line 176.(šÐçÃûÿÿÿÿ8Ÿœ‰ËÝ,
+Nsquid:S1135"2Complete the task associated to this TODO comment.(…ïœ†8Ÿœ‰ËÝ,
+`squid:UselessImportCheck"2Remove this unused import 'android.widget.Button'.(²òžýÿÿÿÿ8Ÿœ‰ËÝ,
+[squid:S3398"?Move this method into the anonymous class declared at line 176.(øƒ¶Ï8Ÿœ‰ËÝ,
+esquid:UselessImportCheck"<Remove this unused import 'android.arch.lifecycle.LiveData'.(Úò›Ž8Ÿœ‰ËÝ,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(·×²ñùÿÿÿÿ8Ÿœ‰ËÝ,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ç³è‚8Ÿœ‰ËÝ,
+Fsquid:S1659"+Declare "dislikeButton" on a separate line.(÷“Á`8Ÿœ‰ËÝ,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÿÕ…ñýÿÿÿÿ8Ÿœ‰ËÝ,
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ‘×8Ÿœ‰ËÝ,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ìÿŽäúÿÿÿÿ8Ÿœ‰ËÝ,
+ksquid:UselessImportCheck"BRemove this unused import 'com.sanjaya.home24.datamodel.Resource'.(¡àž§8Ÿœ‰ËÝ,
+isquid:UselessImportCheck"ARemove this unused import 'com.sanjaya.home24.constant.AppValue'.(¹—†T8Ÿœ‰ËÝ,
+Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ8Ÿœ‰ËÝ,
+Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(ÿ«¬‹üÿÿÿÿ8Ÿœ‰ËÝ,
+esquid:UselessImportCheck"<Remove this unused import 'com.sanjaya.home24.MainActivity'.(››óë8Ÿœ‰ËÝ,
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ÿ«¬‹üÿÿÿÿ8Ÿœ‰ËÝ,
+Csquid:S1659"(Declare "buttonNext" on a separate line.(ñþÿK8Ÿœ‰ËÝ,
+Bsquid:S1659"'Declare "rateCount" on a separate line.(ñþÿK8Ÿœ‰ËÝ,
+Csquid:S1604"(Make this anonymous inner class a lambda(»¬ãS8Ÿœ‰ËÝ,

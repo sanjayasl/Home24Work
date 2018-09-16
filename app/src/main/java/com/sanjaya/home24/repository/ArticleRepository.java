@@ -103,7 +103,7 @@ public class ArticleRepository {
                 db.beginTransaction();
                 try {
                     articleDao.updateLike(items[0],
-                            items[1].equalsIgnoreCase("true") ? true : false);
+                            items[1].equalsIgnoreCase("true") ? true : false, false);
                     db.setTransactionSuccessful();
                 }finally {
                     db.endTransaction();
@@ -121,7 +121,7 @@ public class ArticleRepository {
                 db.beginTransaction();
                 try {
                     articleDao.updateDisLike(items[0],
-                            items[1].equalsIgnoreCase("true") ? true : false);
+                            items[1].equalsIgnoreCase("true") ? true : false, false);
                     db.setTransactionSuccessful();
                 } finally {
                     db.endTransaction();

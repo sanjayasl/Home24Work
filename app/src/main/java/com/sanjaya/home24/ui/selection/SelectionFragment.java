@@ -215,14 +215,16 @@ public class SelectionFragment extends Fragment implements Injectable {
                 case R.id.button_like:
                     articleViewModel.updateArticleWithLike(
                             sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT), likeButton.isChecked());
-                    if(!sharedPeferenceController.getBooleanValue(PREF_ARTICAL_RATED))
+                    if(!sharedPeferenceController.getBooleanValue(PREF_ARTICAL_RATED)) {
                         moveToNext(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT));
+                    }
                     break;
                 case R.id.button_dislike:
                     articleViewModel.updateArticleWithDislike(
                             sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT), dislikeButton.isChecked());
-                    if(!sharedPeferenceController.getBooleanValue(PREF_ARTICAL_RATED))
+                    if(!sharedPeferenceController.getBooleanValue(PREF_ARTICAL_RATED)) {
                         moveToNext(sharedPeferenceController.getIntegerValue(PREF_ARTICAL_COUNT));
+                    }
                     break;
             }
         }

@@ -101,3 +101,7 @@ q
 Aapp/src/main/java/com/sanjaya/home24/adapter/ListViewAdapter.java,b\4\b4fa21c195fdf864d044b821223ec7998f059b75
 t
 Dapp/src/main/java/com/sanjaya/home24/ui/review/ListViewFragment.java,9\8\98baf9c43ca3a859a3a4724e0f90e107ffdd3a05
+q
+Aapp/src/main/java/com/sanjaya/home24/adapter/GridViewAdapter.java,2\f\2fca55f2dff6d707aef646f3575143dd2089ceb6
+]
+-app/src/main/res/layout/grid_view_adapter.xml,7\9\7963f4800ab6d98c491ff7869d3d003f3cbdd1ad
